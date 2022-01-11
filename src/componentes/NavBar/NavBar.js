@@ -1,5 +1,5 @@
-import { FaShoppingCart } from "react-icons/fa";
-import logoBrand from "../assets/img/logo.png"
+import CartWidget from "../CartWidget/CartWidget";
+import logoBrand from "../../assets/img/logo.png"
 import React from "react";
 
 import {
@@ -72,7 +72,7 @@ export default function NavBar({arrayNavBar}) {
             <Menu>
             <IconButton
             size={'md'}
-            icon={<FaShoppingCart />}
+            icon={<CartWidget />}
            onClick={isOpen ? onClose : onOpen}
           />
               

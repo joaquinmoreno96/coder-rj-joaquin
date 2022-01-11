@@ -1,11 +1,14 @@
 import './App.css';
-
-import NavBar from './componentes/NavBar';
+import NavBar from './componentes/NavBar/NavBar';
+import ItemListContainer from "./componentes/ItemListContainer/ItemListContainer.js"
 
 function App() {
   const arrayNavBar = ['INICIO', 'PRODUCTOS','SOBRE NOSOTROS','CONTACTO']
   return (
-    <NavBar arrayNavBar={arrayNavBar}/>
+    <div>
+    <NavBar arrayNavBar={arrayNavBar}/>,
+    <ItemListContainer/>
+    </div>
   )}
 
 export default App;
