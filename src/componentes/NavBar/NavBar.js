@@ -47,7 +47,7 @@ export default function NavBar({arrayNavBar}) {
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <Image
             src={logoBrand}
-            boxSize={{base: "100px", md:"150px"}}
+            boxSize={{base: "100px", md:"flex"}}
             display={{base: "none", md:"flex"}}
           />
           <IconButton
