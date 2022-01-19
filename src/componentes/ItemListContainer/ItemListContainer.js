@@ -1,8 +1,9 @@
 import React from "react";
-import ItemCount from "../ItemCount/ItemCount"
+import ItemList from "../ItemList/ItemList";
+
 function ItemListContainer(){
     return(
-        <ItemCount stock={5} initial={1}/>
+        <ItemList/>
 
     )
 }
