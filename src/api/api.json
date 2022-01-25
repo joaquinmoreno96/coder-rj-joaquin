@@ -1,23 +1,33 @@
 [
     {
+        "id": "001",
         "imageUrl": "https://images.footballfanatics.com/philadelphia-76ers/philadelphia-76ers-nike-association-swingman-jersey-ben-simmons-mens_ss4_p-11970248+u-7ou4b1r5hd3v45q6mtf1+v-ed87201e82c246b492880eddf727f9f7.jpg?_hv=1&w=900",
         "talle": "XL",
-        "title": "Ben Simmons Philadelphia 76ers Swingman",
-        "formattedPrice": "$5,900.00",
-        "stock": 7
+        "title": "Ben Simmons Philadelphia 76ers",
+        "price": "$5,900.00",
+        "stock": 7,
+        "version": "Swingman",
+        "edition": "Association Edition"
     },
     {
+        "id": "002",
         "imageUrl": "https://images.footballfanatics.com/san-antonio-spurs/san-antonio-spurs-manu-ginobili-hardwood-classics-road-swingman-jersey-by-mitchell-and-ness-mens_ss4_p-12013870+u-ztyr1tapzw33peugdus2+v-0a98a26c14714c85a729d5483362500c.jpg?_hv=1&w=900",
         "talle": "XL",
-        "title": "Manu Ginobili San Antonio Spurs Swingman ",
-        "formattedPrice": "$8,200.00",
-        "stock": 15
+        "title": "Manu Ginobili San Antonio Spurs",
+        "price": "$8,200.00",
+        "stock": 15,
+        "version": "Swingman",
+        "edition": "Association Edition"
     },
     {
+        "id": "003",
         "imageUrl": "https://images.footballfanatics.com/denver-nuggets/denver-nuggets-nike-icon-edition-swingman-jersey-navy-nikola-jokic-mens_ss4_p-11972902+u-ccro0a8kd92fbgch8thg+v-156bfa8ac40b4efeac94e5e08cbd1de3.jpg?_hv=1&w=900",
         "talle": "M",
-        "title": "Nikola Jokic Denver Nuggets Swingman",
-        "formattedPrice": "$6,300.00",
-        "stock": 10
+        "title": "Nikola Jokic Denver Nuggets",
+        "price": "$6,300.00",
+        "stock": 10,
+        "version": "Swingman",
+        "edition": "Association Edition"
+        
     }
 ]

@@ -1,27 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Item from "../Item/Item";
-import { Wrap, Spinner } from "@chakra-ui/react";
-import productos from "../../api/api.json";
+import { Wrap, Spinner, Box } from "@chakra-ui/react";
 
-function ItemList() {
-    const [prod, setProd] = useState([]);
-    useEffect(() => {
-        setTimeout(() => {
-            setProd(productos);
-        }, 2000);
-    }, []);
-
+export default function ItemList({ prod }) {
     return (
         <Wrap>
             {prod.length ? (
                 prod.map((e, i) => <Item prod={e} key={i} />)
-            ) : (<div>
-                <Spinner thickness="4px" speed="0.65s" emptyColor="yellow.200" color="blue.500" size="xl" />
-                <h1>LOADING...</h1>
-                </div>
+            ) : (
+                <Box>
+                    <Spinner thickness="8px" speed="0.65s" emptyColor="yellow.200" color="blue.500" size="xl" />
+                    <h1>LOADING...</h1>
+                </Box>
             )}
         </Wrap>
     );
 }
-
-export default ItemList;
