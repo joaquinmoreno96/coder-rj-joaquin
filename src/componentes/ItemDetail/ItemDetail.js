@@ -20,7 +20,6 @@ import {
 import { MdLocalShipping } from "react-icons/md";
 
 export default function ItemDetail({ prod }) {
-    console.log(prod);
     return (
         <Container maxW={"7x1"}>
             <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={{ base: 8, md: 10 }} py={{ base: 18, md: 24 }}>
@@ -52,7 +51,7 @@ export default function ItemDetail({ prod }) {
                                 dolorum expedita hic, ipsum maxime modi nam officiis porro, quae, quisquam quos reprehenderit
                                 velit? Natus, totam.
                             </Text>
-                        </VStack> 
+                        </VStack>
                         <Box>
                             <Text
                                 fontSize={{ base: "16px", lg: "18px" }}
@@ -83,6 +82,7 @@ export default function ItemDetail({ prod }) {
                                     </Text>{" "}
                                     {prod.talle}
                                 </ListItem>
+                               
                             </List>
                         </Box>
                     </Stack>

@@ -1,7 +1,7 @@
 import React from "react";
 import logoBrand from "../../assets/img/logo.png";
-
-import { Box, Container, Stack, Image, Link, useColorModeValue } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
+import { Box, Container, Stack, Image, useColorModeValue } from "@chakra-ui/react";
 
 export default function Footer() {
     return (
@@ -16,9 +16,9 @@ export default function Footer() {
                 align={{ base: "center", md: "center" }}
             >
                 <Stack direction={"row"} spacing={6}>
-                    <Link href={"#"}>Home</Link>
-                    <Link href={"#"}>Productos</Link>
-                    <Link href={"#"}>Contacto</Link>
+                    <Link to={`/`}>Home</Link>
+                    <Link to={`/category`}>Productos</Link>
+                    <Link  to={`/contact`}>Contacto</Link>
                 </Stack>
                 <Image src={logoBrand} boxSize={{ base: "100px", md: "flex" }} display={{ base: "none", md: "flex" }} />
             </Container>

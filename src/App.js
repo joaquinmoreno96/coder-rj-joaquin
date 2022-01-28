@@ -10,20 +10,20 @@ function App() {
     return (
         <>
             <BrowserRouter>
-                <NavBar arrayNavBar={arrayNavBar} />
+                <NavBar/>
 
                 <Switch>
                     {/* ruta home */}
                     <Route exact path="/">
                         <ItemListContainer />
                     </Route>
-                    <Route exact path="/producto/:id">
+                    <Route exact path="/item/:id">
                         <ItemDetailContainer />
                     </Route>
 
                     {/* ruta contacto */}
-                    <Route exact path="/contacto">
-                        Estas en contacto
+                    <Route exact path="/category/:categoryId">
+                    <ItemListContainer />
                     </Route>
 
                     {/* ruta carrito */}

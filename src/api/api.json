@@ -7,7 +7,8 @@
         "price": "$5,900.00",
         "stock": 7,
         "version": "Swingman",
-        "edition": "Association Edition"
+        "edition": "Association Edition",
+        "category": "camisetas"
     },
     {
         "id": "002",
@@ -17,7 +18,8 @@
         "price": "$8,200.00",
         "stock": 15,
         "version": "Swingman",
-        "edition": "Association Edition"
+        "edition": "Association Edition",
+        "category": "camisetas"
     },
     {
         "id": "003",
@@ -27,7 +29,44 @@
         "price": "$6,300.00",
         "stock": 10,
         "version": "Swingman",
-        "edition": "Association Edition"
+        "edition": "Association Edition",
+        "category": "camisetas"
+        
+    },
+    {
+        "id": "004",
+        "imageUrl":"https://images.footballfanatics.com/FFImage/thumb.aspx?i=/productimages/_4249000/altimages/ff_4249886-2f664c168a8eb0ad6faaalt1_full.jpg&w=900",
+        "talle": "S",
+        "title": " Hoodie Philadelphia 76ers Nike 2021/22",
+        "price": "$4,300.00",
+        "stock": 6,
+        "version": "Essential Logo",
+        "edition": "City Edition ",
+        "category": "buzos"
+        
+    },
+    {
+        "id": "005",
+        "imageUrl":"https://images.footballfanatics.com/FFImage/thumb.aspx?i=/productimages/_4249000/altimages/ff_4249873-177e7838f78c491cbea9alt1_full.jpg&w=900",
+        "talle": "L",
+        "title": " Hoodie Golden State Warriors Nike 2021/22",
+        "price": "$4,300.00",
+        "stock": 6,
+        "version": "Essential Logo",
+        "edition": "City Edition ",
+        "category": "buzos"
+        
+    },
+    {
+        "id": "006",
+        "imageUrl": "https://images.footballfanatics.com/FFImage/thumb.aspx?i=/productimages/_4249000/altimages/ff_4249890-792c02dfe37cbeec3ca7alt1_full.jpg&w=900",
+        "talle": "XL",
+        "title": "Hoodie San Antonio Spurs Nike 2021/22",
+        "price": "$3,300.00",
+        "stock": 8,
+        "version": "Essential Logo",
+        "edition": "City Edition",
+        "category": "buzos"
         
     }
 ]

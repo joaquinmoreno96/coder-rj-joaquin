@@ -4,12 +4,12 @@ import swal from "sweetalert";
 import { Link } from "react-router-dom";
 
 export default function Item({ prod }) {
-    console.log(prod)
+   
     const [contador, setContador] = useState(1);
 
     return (
         <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
-            <Link to={`/producto/${prod.id}`}>
+            <Link to={`/item/${prod.id}`}>
             <Image src={prod.imageUrl}  />
             </Link>
             <Box p="6">

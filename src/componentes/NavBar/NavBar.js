@@ -1,33 +1,36 @@
 import CartWidget from "../CartWidget/CartWidget";
 import logoBrand from "../../assets/img/logo.png";
 import React from "react";
+import { Link } from "react-router-dom";
 
-import { Image, Box, Flex, HStack, Link, IconButton, Menu, useDisclosure, useColorModeValue, Stack } from "@chakra-ui/react";
+import {
+    Image,
+    Box,
+    Flex,
+    HStack,
+    IconButton,
+    Menu,
+    useDisclosure,
+    useColorModeValue,
+    Stack,
+    MenuButton,
+    MenuList,
+    MenuItem,
+} from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 
-const NavLink = ({ children }) => (
-    <Link
-        px={2}
-        py={1}
-        rounded={"md"}
-        _hover={{
-            textDecoration: "none",
-            bg: useColorModeValue("gray.200", "gray.700"),
-        }}
-        href={"#"}
-    >
-        {children}
-    </Link>
-);
-
-export default function NavBar({ arrayNavBar }) {
+export default function NavBar() {
     const { isOpen, onOpen, onClose } = useDisclosure();
 
     return (
         <>
             <Box bg={useColorModeValue("gray.100", "gray.900")} px={4}>
                 <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
-                    <Image src={logoBrand} boxSize={{ base: "100px", md: "flex" }} display={{ base: "none", md: "flex" }} />
+                    <Box display={{ base: "none", md: "flex" }}>
+                        <Link to="/">
+                            <Image src={logoBrand} boxSize={{ base: "100px", md: "flex" }} />
+                        </Link>
+                    </Box>
                     <IconButton
                         size={"md"}
                         icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
@@ -35,13 +38,24 @@ export default function NavBar({ arrayNavBar }) {
                         display={{ md: "none" }}
                         onClick={isOpen ? onClose : onOpen}
                     />
-                    <HStack spacing={8} alignItems={"center"}>
-                        <Box></Box>
-                        <HStack as={"nav"} spacing={4} display={{ base: "none", md: "flex" }}>
-                            {arrayNavBar.map((link) => (
-                                <NavLink key={link}>{link}</NavLink>
-                            ))}
-                        </HStack>
+                    <HStack
+                        bg={useColorModeValue("gray.100", "gray.900")}
+                        display={{ base: "none", md: "flex" }}
+                        spacing={8}
+                        alignItems={"center"}
+                    >
+                        <Link to="/">HOME</Link>
+                        <Menu isLazy>
+                            <MenuButton>PRODUCTOS</MenuButton>
+                            <MenuList>
+                                <Link to={`/category/buzos`}>
+                                    <MenuItem>BUZOS</MenuItem>
+                                </Link>
+                                <Link to={`/category/camisetas`}>
+                                    <MenuItem>CAMISETAS NUEVAS</MenuItem>
+                                </Link>
+                            </MenuList>
+                        </Menu>
                     </HStack>
                     <Flex alignItems={"center"}>
                         <Menu>
@@ -52,16 +66,23 @@ export default function NavBar({ arrayNavBar }) {
 
                 {isOpen ? (
                     <Box pb={4} display={{ md: "none" }}>
-                        <Stack as={"nav"} spacing={4}>
-                            {arrayNavBar.map((link) => (
-                                <NavLink key={link}>{link}</NavLink>
-                            ))}
+                        <Stack as={"nav"} spacing={4} alignItems={"center"}>
+                            <Link to={`/`}>HOME</Link>
+                            <Menu>
+                                <MenuButton>PRODUCTOS</MenuButton>
+                                <MenuList>
+                                    <Link to={`/category/buzos`}>
+                                        <MenuItem>BUZOS</MenuItem>
+                                    </Link>
+                                    <Link to={`/category/camisetas`}>
+                                        <MenuItem>CAMISETAS NUEVAS</MenuItem>
+                                    </Link>
+                                </MenuList>
+                            </Menu>
                         </Stack>
                     </Box>
                 ) : null}
             </Box>
-
-            <Box p={4}></Box>
         </>
     );
 }
