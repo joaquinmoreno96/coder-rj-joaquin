@@ -27,8 +27,8 @@ function App() {
                     </Route>
 
                     {/* ruta carrito */}
-                    <Route exact path="/carrito">
-                        listo para comprar
+                    <Route exact path="/cart">
+                        Estas terminando tu compra
                     </Route>
                 </Switch>
                 <Footer />

@@ -1,5 +1,5 @@
-import React from "react";
-
+import React, { useState } from "react";
+import swal from "sweetalert";
 import {
     Box,
     Container,
@@ -15,11 +15,21 @@ import {
     useColorModeValue,
     List,
     ListItem,
+    Badge,
 } from "@chakra-ui/react";
 
 import { MdLocalShipping } from "react-icons/md";
+import ItemCount from "../ItemCount/ItemCount";
+import { Link } from "react-router-dom";
 
 export default function ItemDetail({ prod }) {
+    const [itemCount, setCount] = useState(true);
+
+    function onAdd() {
+        swal("Agregado al carrito exitosamente");
+        setCount(false);
+    }
+
     return (
         <Container maxW={"7x1"}>
             <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={{ base: 8, md: 10 }} py={{ base: 18, md: 24 }}>
@@ -35,7 +45,6 @@ export default function ItemDetail({ prod }) {
                             {prod.price}
                         </Text>
                     </Box>
-
                     <Stack
                         spacing={{ base: 4, sm: 6 }}
                         direction={"column"}
@@ -82,27 +91,18 @@ export default function ItemDetail({ prod }) {
                                     </Text>{" "}
                                     {prod.talle}
                                 </ListItem>
-                               
                             </List>
                         </Box>
                     </Stack>
-
-                    <Button
-                        rounded={"none"}
-                        w={"full"}
-                        mt={8}
-                        size={"lg"}
-                        py={"7"}
-                        bg={useColorModeValue("gray.900", "gray.50")}
-                        color={useColorModeValue("white", "gray.900")}
-                        textTransform={"uppercase"}
-                        _hover={{
-                            transform: "translateY(2px)",
-                            boxShadow: "lg",
-                        }}
-                    >
-                        Agregar al carrito
-                    </Button>
+                    <Box maxW="md" borderWidth="3px" borderRadius="lg" overflow="hidden">
+                        {itemCount ? (
+                            <ItemCount prod={prod} onAdd={onAdd} />
+                        ) : (
+                            <Link to={"/cart"} borderRadius="full" px="8" colorScheme="teal">
+                                Terminar compra
+                            </Link>
+                        )}
+                    </Box>
 
                     <Stack direction="row" alignItems="center" justifyContent={"center"}>
                         <MdLocalShipping />
