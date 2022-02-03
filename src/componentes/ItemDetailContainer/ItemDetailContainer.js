@@ -1,13 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import productos from "../../api/api.json";
 import { useParams } from "react-router-dom";
-import { Spinner, Box } from "@chakra-ui/react"
+import { Spinner, Box } from "@chakra-ui/react";
+import swal from "sweetalert";
+import { cartContext } from "../context/CartProvider";
+
 export default function ItemDetailContainer() {
     const [prod, setProd] = useState([]);
     const { id } = useParams();
     const [loading, setLoading] = useState(true);
+    const [added, setAdded] = useState(false);
+    const { addToCart } = useContext(cartContext);
 
+    const onAdd = (count) => {
+        swal(`Agregaste ${prod.title}, cantidad ${count}`);
+        setAdded(true);
+        addToCart(prod, count);
+    };
     useEffect(() => {
         const GetItem = new Promise((resolve, reject) => {
             setTimeout(() => {
@@ -28,15 +38,17 @@ export default function ItemDetailContainer() {
         <Box minH="79vh">
             {loading ? (
                 <Box>
-                    <Spinner marginLeft={"50%"}
+                    <Spinner
+                        marginLeft={"50%"}
                         thickness="8px"
                         speed="0.65s"
                         emptyColor="yellow.200"
                         color="blue.500"
-                        size="xl"/>
+                        size="xl"
+                    />
                 </Box>
             ) : (
-                <ItemDetail prod={prod} />
+                <ItemDetail prod={prod} onAdd={onAdd} added={added} />
             )}
         </Box>
     );

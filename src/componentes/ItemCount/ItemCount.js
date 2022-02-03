@@ -1,4 +1,4 @@
-import React,{useState}from "react";
+import React, { useState } from "react";
 import { Box, Button, Badge } from "@chakra-ui/react";
 
 export default function ItemCount({ prod, onAdd }) {
@@ -38,13 +38,12 @@ export default function ItemCount({ prod, onAdd }) {
                         <Badge borderRadius="full" px="5" colorScheme="teal">
                             {contador}
                         </Badge>
-                        <Badge onClick={() => onAdd()} borderRadius="full" px="8" colorScheme="teal">
+                        <Badge onClick={() => onAdd(contador)} borderRadius="full" px="8" colorScheme="teal">
                             Agregar al carrito
                         </Badge>
                     </Box>
                 </Box>
             </Box>
-            
         </>
     );
 }

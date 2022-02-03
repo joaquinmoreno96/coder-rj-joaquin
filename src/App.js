@@ -4,35 +4,38 @@ import ItemListContainer from "./componentes/ItemListContainer/ItemListContainer
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Footer from "./componentes/Footer/Footer";
 import ItemDetailContainer from "./componentes/ItemDetailContainer/ItemDetailContainer";
+import Cart from "./componentes/Cart/Cart";
+import { CartProvider } from "./componentes/context/CartProvider";
 
 function App() {
-    const arrayNavBar = ["INICIO", "PRODUCTOS", "SOBRE NOSOTROS", "CONTACTO"];
     return (
         <>
-            <BrowserRouter>
-                <NavBar/>
+            <CartProvider>
+                <BrowserRouter>
+                    <NavBar />
 
-                <Switch>
-                    {/* ruta home */}
-                    <Route exact path="/">
-                        <ItemListContainer />
-                    </Route>
-                    <Route exact path="/item/:id">
-                        <ItemDetailContainer />
-                    </Route>
+                    <Switch>
+                        {/* ruta home */}
+                        <Route exact path="/">
+                            <ItemListContainer />
+                        </Route>
+                        <Route exact path="/item/:id">
+                            <ItemDetailContainer />
+                        </Route>
 
-                    {/* ruta contacto */}
-                    <Route exact path="/category/:categoryId">
-                    <ItemListContainer />
-                    </Route>
+                        {/* ruta contacto */}
+                        <Route exact path="/category/:categoryId">
+                            <ItemListContainer />
+                        </Route>
 
-                    {/* ruta carrito */}
-                    <Route exact path="/cart">
-                        Estas terminando tu compra
-                    </Route>
-                </Switch>
-                <Footer />
-            </BrowserRouter>
+                        {/* ruta carrito */}
+                        <Route exact path="/cart">
+                            <Cart />
+                        </Route>
+                    </Switch>
+                    <Footer />
+                </BrowserRouter>
+            </CartProvider>
         </>
     );
 }

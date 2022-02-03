@@ -57,11 +57,8 @@ export default function NavBar() {
                             </MenuList>
                         </Menu>
                     </HStack>
-                    <Flex alignItems={"center"}>
-                        <Menu>
-                            <IconButton size={"md"} icon={<CartWidget />} onClick={isOpen ? onClose : onOpen} />
-                        </Menu>
-                    </Flex>
+
+                    <IconButton size={"md"} icon={<CartWidget />} />
                 </Flex>
 
                 {isOpen ? (
