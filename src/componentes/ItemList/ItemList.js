@@ -1,6 +1,7 @@
 import React from "react";
 import Item from "../Item/Item";
 import { Wrap, Spinner, Box } from "@chakra-ui/react";
+import ItemCount from "../ItemCount/ItemCount";
 
 export default function ItemList({ prod }) {
     return (

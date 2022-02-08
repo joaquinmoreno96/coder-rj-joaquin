@@ -31,10 +31,7 @@ export default function Item({ prod, onAdd }) {
                     {prod.title}
                 </Box>
 
-                <Box>
-                    ${prod.price}
-                    <Box as="span" color="gray.600" fontSize="sm"></Box>
-                </Box>
+                <Box>${prod.price}</Box>
             </Box>
         </Box>
     );

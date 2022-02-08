@@ -11,14 +11,12 @@ import {
     Image,
     Flex,
     VStack,
-    Button,
     Heading,
     SimpleGrid,
     StackDivider,
     useColorModeValue,
     List,
     ListItem,
-    Badge,
 } from "@chakra-ui/react";
 
 export default function ItemDetail({ prod, onAdd, added }) {

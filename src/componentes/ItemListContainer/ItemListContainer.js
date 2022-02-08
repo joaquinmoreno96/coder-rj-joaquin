@@ -4,11 +4,12 @@ import productos from "../../api/api.json";
 import { useParams } from "react-router-dom";
 import { Spinner, Box } from "@chakra-ui/react";
 
+
 export default function ItemListContainer() {
     const [prod, setProd] = useState([]);
     const [loading, setLoading] = useState(true);
-
     const { categoryId } = useParams();
+
 
     useEffect(() => {
         setLoading(true);
@@ -19,7 +20,7 @@ export default function ItemListContainer() {
     }, [categoryId]);
 
     return (
-        <Box minH="79vh">
+        <Box minH="79vh" mt={2}>
             {loading ? (
                 <Box>
                     <Spinner

@@ -1,7 +1,8 @@
 import CartWidget from "../CartWidget/CartWidget";
 import logoBrand from "../../assets/img/logo.png";
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { cartContext } from "../context/CartProvider";
 
 import {
     Image,
@@ -21,7 +22,7 @@ import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 
 export default function NavBar() {
     const { isOpen, onOpen, onClose } = useDisclosure();
-
+    const { countCart } = useContext(cartContext);
     return (
         <>
             <Box bg={useColorModeValue("gray.100", "gray.900")} px={4}>
@@ -52,13 +53,12 @@ export default function NavBar() {
                                     <MenuItem>BUZOS</MenuItem>
                                 </Link>
                                 <Link to={`/category/camisetas`}>
-                                    <MenuItem>CAMISETAS NUEVAS</MenuItem>
+                                    <MenuItem>CAMISETAS</MenuItem>
                                 </Link>
                             </MenuList>
                         </Menu>
                     </HStack>
-
-                    <IconButton size={"md"} icon={<CartWidget />} />
+                    {countCart() ? <IconButton size={"md"} icon={<CartWidget />} /> : <div></div>}
                 </Flex>
 
                 {isOpen ? (
