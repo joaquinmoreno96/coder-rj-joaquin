@@ -28,7 +28,7 @@ export default function Footer() {
                             </Link>
                         </MenuList>
                     </Menu>
-                    <Link to={`/contact`}>Contacto</Link>
+                    <Link to={`/contacto`}>Contacto</Link>
                 </Stack>
                 <Image src={logoBrand} boxSize={{ base: "100px", md: "flex" }} display={{ base: "none", md: "flex" }} />
             </Container>

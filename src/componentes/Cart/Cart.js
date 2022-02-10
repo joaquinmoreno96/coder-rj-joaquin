@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { cartContext } from "../context/CartProvider";
 import { Table, Thead, Tbody, Tfoot, Tr, Th, Td, TableCaption, Button, Box, Heading } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import swal from "sweetalert";
 
 export default function Cart() {
     const { cart, deleteItem, clearCart, valorTotal } = useContext(cartContext);
@@ -45,7 +46,7 @@ export default function Cart() {
                             <Td isNumeric>TOTAL:</Td>
                             <Td>${valorTotal()}</Td>
                             <Td>
-                                <Button colorScheme="teal" onClick={clearCart} mr={3} mt={2}>
+                                <Button colorScheme="teal"  mr={3} mt={2}>
                                     TERMINAR COMPRA
                                 </Button>
                             </Td>

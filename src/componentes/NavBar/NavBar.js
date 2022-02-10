@@ -72,7 +72,7 @@ export default function NavBar() {
                                         <MenuItem>BUZOS</MenuItem>
                                     </Link>
                                     <Link to={`/category/camisetas`}>
-                                        <MenuItem>CAMISETAS NUEVAS</MenuItem>
+                                        <MenuItem>CAMISETAS</MenuItem>
                                     </Link>
                                 </MenuList>
                             </Menu>

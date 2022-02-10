@@ -33,7 +33,7 @@ export default function ItemDetail({ prod, onAdd, added }) {
                                 {prod.title}
                             </Heading>
                             <Text color={useColorModeValue("gray.900", "gray.400")} fontWeight={300} fontSize={"2xl"}>
-                                {prod.price}
+                               ${prod.price}
                             </Text>
                         </Box>
                         <Stack
