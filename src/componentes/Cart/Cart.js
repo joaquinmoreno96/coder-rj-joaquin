@@ -1,8 +1,7 @@
 import React, { useContext } from "react";
 import { cartContext } from "../context/CartProvider";
-import { Table, Thead, Tbody, Tfoot, Tr, Th, Td, TableCaption, Button, Box, Heading } from "@chakra-ui/react";
+import { Table, Thead, Tbody, Tfoot, Tr, Th, Td, TableCaption, Button, Box, Heading, Image } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import swal from "sweetalert";
 
 export default function Cart() {
     const { cart, deleteItem, clearCart, valorTotal } = useContext(cartContext);
@@ -10,11 +9,12 @@ export default function Cart() {
     return (
         <Box minH="76vh">
             {cart.length ? (
-                <Table size="lg" variant="striped" colorScheme="teal">
+                <Table size="lg" variant="striped" colorScheme="teal" fontWeight="semibold">
                     <TableCaption>FINALIZANDO COMPRA</TableCaption>
                     <Thead>
                         <Tr>
                             <Th>PRODUCTO</Th>
+                            <Th>DESCRIPCION</Th>
                             <Th>CANTIDAD</Th>
                             <Th>TOTAL </Th>
                             <Th>ACCION </Th>
@@ -24,6 +24,9 @@ export default function Cart() {
                         {cart.map((e) => {
                             return (
                                 <Tr>
+                                    <Td>
+                                        <Image src={e.item.imageUrl} boxSize="130px"></Image>
+                                    </Td>
                                     <Td>{e.item.title}</Td>
                                     <Td>{e.cantidad}</Td>
                                     <Td>${parseInt(e.cantidad * e.item.price)}</Td>
@@ -38,6 +41,7 @@ export default function Cart() {
                     </Tbody>
                     <Tfoot>
                         <Tr>
+                            <Td></Td>
                             <Td>
                                 <Button colorScheme="red" onClick={clearCart} mr={3} mt={2}>
                                     BORRAR TODOS LOS PRODUCTOS
@@ -46,9 +50,11 @@ export default function Cart() {
                             <Td isNumeric>TOTAL:</Td>
                             <Td>${valorTotal()}</Td>
                             <Td>
-                                <Button colorScheme="teal"  mr={3} mt={2}>
-                                    TERMINAR COMPRA
-                                </Button>
+                                <Link to={`/formulario`}>
+                                    <Button colorScheme="teal" mr={3} mt={2}>
+                                        TERMINAR COMPRA
+                                    </Button>
+                                </Link>
                             </Td>
                         </Tr>
                     </Tfoot>

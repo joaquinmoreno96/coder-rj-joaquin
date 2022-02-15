@@ -44,10 +44,11 @@ export default function NavBar() {
                         display={{ base: "none", md: "flex" }}
                         spacing={8}
                         alignItems={"center"}
+                        
                     >
                         <Link to="/">HOME</Link>
                         <Menu isLazy>
-                            <MenuButton>PRODUCTOS</MenuButton>
+                            <MenuButton >PRODUCTOS</MenuButton>
                             <MenuList>
                                 <Link to={`/category/buzos`}>
                                     <MenuItem>BUZOS</MenuItem>

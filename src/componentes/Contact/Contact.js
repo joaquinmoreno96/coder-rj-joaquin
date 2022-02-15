@@ -110,7 +110,7 @@ export default function Contact() {
                             >
                                 <VStack spacing={5}>
                                     <FormControl isRequired>
-                                        <FormLabel>Name</FormLabel>
+                                        <FormLabel>Nombre</FormLabel>
 
                                         <InputGroup>
                                             <InputLeftElement children={<BsPerson />} />
@@ -128,7 +128,7 @@ export default function Contact() {
                                     </FormControl>
 
                                     <FormControl isRequired>
-                                        <FormLabel>Message</FormLabel>
+                                        <FormLabel>Mensaje</FormLabel>
 
                                         <Textarea name="message" placeholder="Your Message" rows={6} resize="none" />
                                     </FormControl>
@@ -142,7 +142,7 @@ export default function Contact() {
                                         }}
                                         isFullWidth
                                     >
-                                        Send Message
+                                        Enviar mensaje
                                     </Button>
                                 </VStack>
                             </Box>

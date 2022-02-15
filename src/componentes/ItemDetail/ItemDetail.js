@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { MdLocalShipping } from "react-icons/md";
 import ItemCount from "../ItemCount/ItemCount";
@@ -10,13 +10,13 @@ import {
     Text,
     Image,
     Flex,
-    VStack,
     Heading,
     SimpleGrid,
     StackDivider,
     useColorModeValue,
     List,
     ListItem,
+    Button,
 } from "@chakra-ui/react";
 
 export default function ItemDetail({ prod, onAdd, added }) {
@@ -32,8 +32,12 @@ export default function ItemDetail({ prod, onAdd, added }) {
                             <Heading lineHeight={1.1} fontWeight={600} fontSize={{ base: "2xl", sm: "4xl", lg: "5xl" }}>
                                 {prod.title}
                             </Heading>
-                            <Text color={useColorModeValue("gray.900", "gray.400")} fontWeight={300} fontSize={"2xl"}>
-                               ${prod.price}
+                            <Text
+                                color={useColorModeValue("gray.900", "gray.400")}
+                                fontWeight={400}
+                                fontSize={{ base: "2xl", sm: "4xl", lg: "5xl" }}
+                            >
+                                ${prod.price}
                             </Text>
                         </Box>
                         <Stack
@@ -41,17 +45,6 @@ export default function ItemDetail({ prod, onAdd, added }) {
                             direction={"column"}
                             divider={<StackDivider borderColor={useColorModeValue("gray.200", "gray.600")} />}
                         >
-                            <VStack spacing={{ base: 4, sm: 6 }}>
-                                <Text color={useColorModeValue("gray.500", "gray.400")} fontSize={"2xl"} fontWeight={"300"}>
-                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                                    invidunt ut labore
-                                </Text>
-                                <Text fontSize={"lg"}>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquid amet at delectus
-                                    doloribus dolorum expedita hic, ipsum maxime modi nam officiis porro, quae, quisquam quos
-                                    reprehenderit velit? Natus, totam.
-                                </Text>
-                            </VStack>
                             <Box>
                                 <Text
                                     fontSize={{ base: "16px", lg: "18px" }}
@@ -63,7 +56,7 @@ export default function ItemDetail({ prod, onAdd, added }) {
                                     Detalle del producto
                                 </Text>
 
-                                <List spacing={2}>
+                                <List spacing={3}>
                                     <ListItem>
                                         <Text as={"span"} fontWeight={"bold"}>
                                             Version:
@@ -85,10 +78,10 @@ export default function ItemDetail({ prod, onAdd, added }) {
                                 </List>
                             </Box>
                         </Stack>
-                        <Box maxW="md" borderWidth="3px" borderRadius="lg" overflow="hidden">
+                        <Box maxW="md" borderRadius="lg" overflow="hidden">
                             {added ? (
                                 <Link to={`/cart`} borderRadius="full" px="8" colorScheme="teal">
-                                    Terminar compra
+                                    <Button>Terminar compra</Button>
                                 </Link>
                             ) : (
                                 <ItemCount onAdd={onAdd} prod={prod} />

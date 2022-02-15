@@ -31,6 +31,7 @@ export function CartProvider({ children }) {
     function valorTotal(){
         return cart.reduce((a, b) => a + (b.item.price * b.cantidad), 0)
     }
+    
 
     return <cartContext.Provider value={{ cart, addToCart, deleteItem, clearCart, countCart,valorTotal }}>{children}</cartContext.Provider>;
 }

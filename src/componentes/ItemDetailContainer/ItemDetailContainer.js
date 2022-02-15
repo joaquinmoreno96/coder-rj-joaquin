@@ -1,8 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
-
 import { useParams } from "react-router-dom";
-
 import swal from "sweetalert";
 import { cartContext } from "../context/CartProvider";
 import { getFirestore } from "../../api/config";
@@ -28,8 +26,7 @@ export default function ItemDetailContainer() {
             .get()
             .then((doc) => {
                 if (!doc.exists) return;
-
-                setProd({ id: doc.id, ...doc.data() });
+                 setProd({ id: doc.id, ...doc.data() });
             })
             .catch((err) => {
                 console.log(err);
