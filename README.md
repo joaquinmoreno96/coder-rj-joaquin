@@ -1,12 +1,11 @@
-Basket Shop
+**#Basket Shop**
 
-<div style="position: relative; padding-bottom: 46.40625%; height: 0;"><iframe src="https://www.loom.com/embed/f1ced386250543b0aec45abea632cc1d" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+https://user-images.githubusercontent.com/90940275/155903951-eb008543-1b7a-4feb-a3ed-c58dd7684a83.mp4
 
+**##Descripción
+**En este proyecto, se realizo una página sobre productos de basquet porque es lo que nos apasiona.
 
-Descripción
-En este proyecto, se realizo una página sobre productos de basquet porque es lo que nos apasiona.
-
-Funcionamiento del código:
+**##Funcionamiento del código:**
 Actualmente la app utiliza componentes los cuales tienen una forma de funcionar. Detalle de los mismos:
 
 NavBar = Componente en cual se renderiza la barra de navegación.
@@ -29,18 +28,24 @@ CartWidget = Renderiza el icono del carrito junto con un numero indicador de ite
 
 Cart = Realiza el mapeo del carrito ubicandolo en un table que muestra todos los detalles.
 
-#HERRAMIENTAS UTILIZADAS
-​
+**#HERRAMIENTAS UTILIZADAS**
+
 .ReactJS
+
 .Create React App - Se uso para crear la aplicacion, ya que es de facil de aplicar.
+
 .React Router DOM - Utilizado para crear las rutas correspondientes para navegar en la App.
-.Firebase's Firestore 8.8.0 - Base de datos en la cual se cargaron los productos y muy sencilla de usar.​
+
+.Firebase's Firestore 8.8.0 - Base de datos en la cual se cargaron los productos y muy sencilla de usar.
+
 .ChakraUi/icons 1.1.1 - Utilizado para todos los iconos utilizados.
+
 .Chakra-ui/react 1.7.4 - Utilizado para darle style a toda la App.
+
 .Sweetalert 2.1.2 - Alertas que aparecen en la pagina al realizar compra.
 
 
-#INSTALACION
+**#INSTALACION**
 
 En la terminal, seleccionar la carpeta donde se almacenará el proyecto. cd mi_carpeta
 
@@ -54,8 +59,8 @@ Al terminar la instalación, ejecutar el comando para iniciar el servidor en la 
 
 Para terminar el proceso en Windows presionar en la consola: ctrl + C
 
-Autores y reconocimiento
+**Autores y reconocimiento**
 -Moreno Joaquin (Programador y diseñador)
 
-Estado del proyecto
+**Estado del proyecto**
 Actualmente se encuentra en la fase final, pero abierto a cualquier ayuda en cuanto a la logica de firebase o diseño.
