@@ -1,4 +1,5 @@
 import React from "react";
+import swal from "sweetalert";
 import {
     Box,
     Button,
@@ -13,18 +14,14 @@ import {
     Link,
     Stack,
     Textarea,
-    Tooltip,
-    useClipboard,
     useColorModeValue,
     VStack,
 } from "@chakra-ui/react";
 
 import { BsGithub, BsLinkedin, BsPerson, BsTwitter } from "react-icons/bs";
-import { MdEmail, MdOutlineEmail } from "react-icons/md";
+import { MdOutlineEmail } from "react-icons/md";
 
 export default function Contact() {
-    const { hasCopied, onCopy } = useClipboard("example@example.com");
-
     return (
         <Flex bg={useColorModeValue("gray.100", "gray.900")} align="center" justify="center" id="contact">
             <Box borderRadius="lg" m={{ base: 5, md: 16, lg: 10 }} p={{ base: 5, lg: 16 }}>
@@ -41,23 +38,7 @@ export default function Contact() {
 
                         <Stack spacing={{ base: 4, md: 8, lg: 20 }} direction={{ base: "column", md: "row" }}>
                             <Stack align="center" justify="space-around" direction={{ base: "row", md: "column" }}>
-                                <Tooltip label={hasCopied ? "Email Copied!" : "Copy Email"} closeOnClick={false} hasArrow>
-                                    <IconButton
-                                        aria-label="email"
-                                        variant="ghost"
-                                        size="lg"
-                                        fontSize="3xl"
-                                        icon={<MdEmail />}
-                                        _hover={{
-                                            bg: "blue.500",
-                                            color: useColorModeValue("white", "gray.700"),
-                                        }}
-                                        onClick={onCopy}
-                                        isRound
-                                    />
-                                </Tooltip>
-
-                                <Link href="#">
+                                <Link href="https://github.com/joaquinmoreno96?tab=repositories">
                                     <IconButton
                                         aria-label="github"
                                         variant="ghost"
@@ -72,7 +53,7 @@ export default function Contact() {
                                     />
                                 </Link>
 
-                                <Link href="#">
+                                <Link href="https://twitter.com/MorenoJoaqo">
                                     <IconButton
                                         aria-label="twitter"
                                         variant="ghost"
@@ -86,7 +67,7 @@ export default function Contact() {
                                     />
                                 </Link>
 
-                                <Link href="#">
+                                <Link href="https://www.linkedin.com/in/joaquin-gabriel-moreno-1130a7210/">
                                     <IconButton
                                         aria-label="linkedin"
                                         variant="ghost"
@@ -134,6 +115,7 @@ export default function Contact() {
                                     </FormControl>
 
                                     <Button
+                                        onClick={() => swal("Mail enviado")}
                                         colorScheme="blue"
                                         bg="blue.400"
                                         color="white"

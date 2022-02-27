@@ -1,13 +1,36 @@
 import React, { useContext } from "react";
 import { cartContext } from "../context/CartProvider";
-import { Table, Thead, Tbody, Tfoot, Tr, Th, Td, TableCaption, Button, Box, Heading, Image } from "@chakra-ui/react";
+import {
+    Table,
+    Thead,
+    Tbody,
+    Tfoot,
+    Tr,
+    Th,
+    Td,
+    TableCaption,
+    Button,
+    Box,
+    Heading,
+    Image,
+    HStack,
+    Text,
+} from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
 export default function Cart() {
-    const { cart, deleteItem, clearCart, valorTotal } = useContext(cartContext);
+    const { cart, deleteItem, clearCart, valorTotal, updateCart } = useContext(cartContext);
+
+    const handleIncrement = (number, id) => {
+        number >= 0 && updateCart(id, number + 1);
+    };
+
+    const handleDecrement = (number, id) => {
+        number > 1 && updateCart(id, number - 1);
+    };
 
     return (
-        <Box minH="76vh">
+        <Box minH="80vh">
             {cart.length ? (
                 <Table size="lg" variant="striped" colorScheme="teal" fontWeight="semibold">
                     <TableCaption>FINALIZANDO COMPRA</TableCaption>
@@ -28,7 +51,29 @@ export default function Cart() {
                                         <Image src={e.item.imageUrl} boxSize="130px"></Image>
                                     </Td>
                                     <Td>{e.item.title}</Td>
-                                    <Td>{e.cantidad}</Td>
+                                    <Td>
+                                        <HStack>
+                                            <Button
+                                                size="sm"
+                                                colorScheme="red"
+                                                _focus={{ outline: "none" }}
+                                                onClick={() => handleIncrement(e.cantidad, e.item.id)}
+                                                disabled={e.cantidad >= e.item.stock}
+                                            >
+                                                +
+                                            </Button>
+                                            <Text>{e.cantidad}</Text>
+                                            <Button
+                                                size="sm"
+                                                colorScheme="red"
+                                                _focus={{ outline: "none" }}
+                                                onClick={() => handleDecrement(e.cantidad, e.item.id)}
+                                            >
+                                                -
+                                            </Button>
+                                        </HStack>
+                                    </Td>
+
                                     <Td>${parseInt(e.cantidad * e.item.price)}</Td>
                                     <Td>
                                         <Button colorScheme="red" onClick={() => deleteItem(e.item.id)}>

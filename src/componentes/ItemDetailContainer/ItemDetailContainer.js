@@ -26,7 +26,7 @@ export default function ItemDetailContainer() {
             .get()
             .then((doc) => {
                 if (!doc.exists) return;
-                 setProd({ id: doc.id, ...doc.data() });
+                setProd({ id: doc.id, ...doc.data() });
             })
             .catch((err) => {
                 console.log(err);

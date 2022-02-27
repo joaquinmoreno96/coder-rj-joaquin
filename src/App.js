@@ -1,4 +1,3 @@
-import "./App.css";
 import NavBar from "./componentes/NavBar/NavBar";
 import ItemListContainer from "./componentes/ItemListContainer/ItemListContainer";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
@@ -17,7 +16,6 @@ function App() {
                     <NavBar />
 
                     <Switch>
-                        {/* ruta home */}
                         <Route exact path="/">
                             <ItemListContainer />
                         </Route>
@@ -34,9 +32,8 @@ function App() {
                             <Contact />
                         </Route>
                         <Route exact path="/formulario">
-                            <FormSell/>
+                            <FormSell />
                         </Route>
-                        
                     </Switch>
                     <Footer />
                 </BrowserRouter>
