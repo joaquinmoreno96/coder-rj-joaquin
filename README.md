@@ -2,8 +2,8 @@
 
 https://user-images.githubusercontent.com/90940275/155903951-eb008543-1b7a-4feb-a3ed-c58dd7684a83.mp4
 
-**##Descripción
-**En este proyecto, se realizo una página sobre productos de basquet porque es lo que nos apasiona.
+**##Descripción**
+En este proyecto, se realizo una página sobre productos de basquet porque es lo que nos apasiona.
 
 **##Funcionamiento del código:**
 Actualmente la app utiliza componentes los cuales tienen una forma de funcionar. Detalle de los mismos:
