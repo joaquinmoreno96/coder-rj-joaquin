@@ -46,7 +46,7 @@ export default function FormSell() {
                 });
 
                 setOrderId(id);
-                swal("Muchas gracias por su compra, lo redireccionaremos a la pagina principal");
+                swal(`Muchas gracias por su compra, su numero de orden es ${id} lo redireccionaremos a la pagina principal.`);
                 clearCart();
                 history.push("/");
             })
@@ -66,7 +66,6 @@ export default function FormSell() {
             marginTop="3px"
             marginBottom="3px"
         >
-            {orderId && <h1 fontWeight="semibold">Felicitaciones tu order es {orderId}</h1>}
             <form onSubmit={(e) => confirmOrder(e)}>
                 <Stack>
                     <Text textAlign="center" fontSize="22px" fontFamily="sans-serif">
